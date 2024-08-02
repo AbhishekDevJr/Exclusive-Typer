@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <script src="https://kit.fontawesome.com/66ddaae54d.js" crossOrigin="anonymous"></script>
+      </head>
+      <body className={`${inter.className} bg-[#1e1e1e] px-[150px]`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
